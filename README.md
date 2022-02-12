@@ -1,5 +1,7 @@
 # A UDP server and client
-An example of how a UDP server and client can be used.  It uses sockets.
+An example of how a UDP server and client can be used with sockets.
+You can create as many clients as you want. Server responses how many clients
+are connected with him and gives the length of the client message.
 
 ## Build
 Use Makefile to build a project.  I use the GCC compiler, but you can change
