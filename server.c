@@ -49,6 +49,7 @@ void write_metadata_callback(int clientmsg_len, void *clientdata)
 	int cx;
 	struct MetaClientData *mcd = clientdata;
 
+	mcd->n_clients++;
 	cx = snprintf(mcd->metadata, max_metadata_len,
 	              "# of clients: %lu, # of recieved bytes: %d",
 	              mcd->n_clients, clientmsg_len);
@@ -57,7 +58,6 @@ void write_metadata_callback(int clientmsg_len, void *clientdata)
 		       max_metadata_len);
 		return ;
 	}
-	mcd->n_clients++;
 	mcd->metadata_size = sizeof(mcd->metadata);
 }
 
